@@ -24,7 +24,7 @@ const Coursetype = ({corsesType, setCoursesType}) => {
 
   const addingData = () => {
     const isDuplicate = corsesType.some(
-      (course) => course.courseName.toLowerCase() === inputValue.toLowerCase()
+      (course) => course.courseType.toLowerCase() === inputValue.toLowerCase()
     );
 
     if (isDuplicate) {
@@ -142,8 +142,11 @@ const Coursetype = ({corsesType, setCoursesType}) => {
             }
               <div className="modal-layout-buttons">
                 <Button variant="outlined" onClick={() =>{ 
-                  setOpen(false) 
-                  setError(false)}}>
+                  setOpen(false)
+                  setNameExist(false) 
+                  setError(false)
+                  setInputValue('')
+                  }}>
                   Cancel
                 </Button>
                 <Button variant="solid" onClick={addingData}>
